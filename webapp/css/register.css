@@ -1,0 +1,59 @@
+.container {
+	padding-top: 0.9rem;
+	min-width: 6.4rem;
+}
+
+.pass_layout {
+	float: left;
+	margin-top: 0.48rem;
+	width: 100%;
+}
+
+.pass_layout .input_style {
+	width: 92%;
+	border-bottom: 0.03rem solid #ededed;
+	height: 0.7rem;
+	margin-left: 4%;
+}
+
+.pass_layout .input_style input {
+	float: left;
+	color: #333;
+	font-size: 0.28rem;
+	height: 0.4rem;
+	margin-top: 0.15rem;
+}
+
+.pwd_input {
+	margin-top: 0.27rem;
+}
+
+select, input {
+	vertical-align: middle;
+	font-size: .28rem;
+	outline: none;
+}
+
+.message_div {
+	float: left;
+	width: 70%;
+	color: #ee6461;
+	margin-bottom: 0.16rem;
+	height: 0.5rem;
+	margin-left: 4%;
+	margin-top: 0.12rem;
+	clear: both;
+}
+
+.nextPass {
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    background-color: #ee6461;
+    border-radius: 0.08rem;
+    color: #fff;
+    font-size: 0.36rem;
+    float: left;
+    width: 93.1%;
+    margin-left: 3.45%;
+}

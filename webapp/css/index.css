@@ -1,0 +1,210 @@
+body{
+	background-color:#fff;
+}
+
+.head-parent{
+	position: relative;
+	height:0.8rem;
+	background-color: #ed6560;
+}
+
+img{
+	width: 100%;
+}
+
+.my_head{
+	position: relative;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	background-color: #EE6461;
+}
+
+.my_head-home{
+	position: relative!important;
+	width:100%;
+	z-index: 10;
+}
+
+.home_logo{
+	position: absolute;
+	width: 0.42rem;
+	height: 0.42rem;
+	left: 0.22rem;
+	top: 0.1rem;
+}
+
+.my_title{
+	position: absolute;
+	color: #FFFFFF;
+	left: 0.8rem;
+	font-size:0.3rem;
+}
+
+.mh_right{
+	position: relative;
+	left: -0.5rem;
+}
+
+.my_person {
+	top: 0.24rem;
+	width: 0.30rem;
+	height: 0.30rem;
+	position: relative;
+}
+.my_person img{
+	width: 100%;
+	padding-left: 0.2rem;
+	position: absolute;
+}
+
+.my_nav{
+	border:none!important;
+}
+
+.my_nav{
+	padding-bottom: 0rem!important;
+}
+.my_nav li{
+	float: left;
+	width: 30%;
+	line-height: 0.8rem;
+	text-align: center;
+}
+
+.foot_nav .myul{    
+	width: 90%;
+    padding: 0 4%;
+    margin: 0rem 0;
+}
+
+.my_foot{
+    width: 100%;
+    height: 1rem;
+    flex: 0 0 auto;
+    background-color: #EE6461;
+    margin-top: 0.12rem;
+}
+
+.nav_search{
+    position: absolute;
+    width: 86%;
+    margin-top: 0.2rem;
+}
+
+.nav_search input{
+   	position: relative;
+    width: 97%;
+    left: 7%;
+    height: 0.52rem;
+    border: none;
+    line-height: 0.52rem;
+    padding: 0 0.1rem;
+    border-radius: 0.1rem;
+    background-color: #f5f5f5;
+    color:#333;
+}
+.nav_search input::-webkit-input-placeholder{color: #999;}
+.nav_search input::-moz-input-placeholder{color: #999;}
+.nav_search input::-ms-input-placeholder{color: #999;}
+.nav_search input::-o-input-placeholder{color: #999;}
+
+.ns_img{
+    position: absolute;
+    right: -0.3rem;
+    bottom: 0.1rem;
+    width: 0.31rem;
+    height: 0.33rem;	
+}
+
+.my_record{
+    margin-left: 0.3rem;
+    height: 0.62rem;
+    margin-right: 0.3rem;
+}
+
+.my_record_recent{
+	float:left;
+	width:75%;
+	height:0.58rem;
+	overflow:hidden;
+}
+
+.mr_img_left{
+	width: 0.32rem;
+    height: 0.32rem;
+    margin-right: 0.2rem;
+    float: left;
+}
+
+.mr_img_left img{
+	margin-top:0.16rem;
+	width: 100%;
+	height:auto;
+	display: inline-block;
+}
+
+.my_r_name{
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.28rem;
+    float:left;
+    line-height:0.62rem;
+    width: 86%;
+}
+
+.my_record_shift{
+	float:right;
+	height:0.62rem;
+	line-height:0.62rem;
+}
+
+.shu_line{
+    width: rem;
+    width: 0.02rem;
+    height: 0.4rem;
+    background-color: #c8c8c8;
+    margin-top: 0.09rem;
+    float: left;
+}
+
+.mr_img_right{
+	width: 0.28rem;
+	height:0.32rem;
+	margin: 0 0.16rem;
+	padding-top:0.14rem;
+	float:left;
+}
+
+.my_r_text{
+	color:#666;
+	font-size: 0.28rem;
+	margin-top: 0.02rem;
+	float: left;
+	line-height: 0.28rem;
+	padding-top: 0.16rem;
+}
+
+.fl{
+	float: left;
+}
+
+.fc:after{
+	content: " ";
+	height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;	
+}
+
+.nv_active a{
+	color: #FFFFFF;
+	border-radius: 0.1rem;
+	background-color: #EE6461;
+	width:1.2rem;
+    display:inline-block;
+    line-height:0.32rem;
+    padding-top: 0.08rem;
+    padding-bottom: 0.08rem;
+}

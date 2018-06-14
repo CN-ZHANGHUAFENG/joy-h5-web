@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="h5VerifyCodeRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="h5VerifyCodeJedisConnectionFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+	</bean>
+
+	<bean id="h5VerifyCodeJedisConnectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		destroy-method="destroy">
+		<property name="hostName" value="${h5.vc.redis.host}" />
+		<property name="port" value="${h5.vc.redis.port}" />
+		<property name="database" value="${h5.vc.redis.dbIndex}" />
+		<property name="password" value="${h5.vc.redis.password}" />
+		<property name="timeout" value="${h5.vc.redis.timeout}" />
+		<property name="usePool" value="${h5.vc.redis.usePool}" />
+		<property name="poolConfig" ref="h5VerifyCodePoolConfig" />
+	</bean>
+
+	<bean id="h5VerifyCodePoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxActive" value="${h5.redis.pool.maxActive}" />
+		<property name="maxIdle" value="${h5.redis.pool.maxIdle}" />
+		<property name="maxWait" value="${h5.redis.pool.maxWait}" />
+		<property name="testOnBorrow" value="${h5.redis.pool.testOnBorrow}" />
+	</bean>
+
+</beans>

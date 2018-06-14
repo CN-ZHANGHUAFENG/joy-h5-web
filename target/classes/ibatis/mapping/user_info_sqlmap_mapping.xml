@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="USER_INFO">
+
+	<typeAlias alias="USER" type="com.joyreach.h5.web.entity.UserEntity" />
+	<typeAlias alias="uQuery" type="com.joyreach.h5.web.query.UserInfoQuery" />
+
+	<select id="GET_USER_INFO_BY_QUERY" parameterClass="uQuery" resultClass="USER">
+		SELECT 
+			ul.id,
+			ul.phone,
+			ul.password,
+			ul.vip_level AS vipLevel,
+			ult.h5_token AS token,
+			ul.create_time AS createTime
+		FROM tbl_h5_user_login ul
+		LEFT JOIN tbl_h5_user_login_token ult ON ul.id = ult.user_id
+		WHERE 1=1 
+		<isNotEmpty prepend="AND" property="userId">
+			ul.id = #userId#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="phone">
+			ul.phone = #phone#
+		</isNotEmpty>
+	</select>
+	
+	<insert id="INSERT_USER_INFO" parameterClass="USER">
+		INSERT INTO tbl_h5_user_login (
+			id,
+			phone,
+			password,
+			vip_level,
+			create_time
+		) VALUES(
+			#id#,
+			#phone#,
+			#password#,
+			#vipLevel#,
+			now()
+		)
+	</insert>
+	
+	<insert id="INSERT_USER_TOKEN_INFO" parameterClass="USER">
+		INSERT INTO tbl_h5_user_login_token(
+			user_id,
+			h5_token,
+			create_time
+		) VALUES (
+			#id#,
+			#token#,
+			now()
+		)
+	</insert>
+	
+	<update id="UPDATE_USER_TOKEN_INFO" parameterClass="USER">
+		UPDATE tbl_h5_user_login_token SET h5_token = #token# 
+		WHERE user_id = #id#
+	</update>
+	
+	<update id="IMPROVE_USER_VIP_LEVEL" parameterClass="USER">
+		UPDATE tbl_h5_user_login SET vip_level = #vipLevel# 
+		WHERE id = #id#
+	</update>
+</sqlMap>

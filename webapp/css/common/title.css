@@ -1,0 +1,26 @@
+.my_head{
+	z-index: 10;
+}
+.head-parent{
+	position: relative;
+	height:0.8rem;
+	background-color: #ed6560;
+}
+.layout_header{
+	position: absolute;
+	width:100%;
+	top:0;
+	z-index: 10;
+}
+.putOut{
+	position: fixed!important;
+}
+
+.my_head-home{
+	position: relative!important;
+	width:100%;
+	z-index: 10;
+}
+body{
+	position: relative;
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="H5_VIP_BOOK">
+
+	<typeAlias alias="VBook" type="com.joyreach.h5.web.entity.VipBookEntity" />
+	<typeAlias alias="VBookChapter" type="com.joyreach.h5.web.entity.BookChapterEntity" />
+	<typeAlias alias="VBookQuery" type="com.joyreach.h5.web.query.VipBookInfoQuery" />
+
+	<sql id="BOOK_BASE_CONDITION">
+		<isNotEmpty property="vipLevel" prepend="AND">
+			vip_level &lt;= #vipLevel#
+		</isNotEmpty>
+	</sql>
+
+	<select id="SELECT_VIP_BOOK_LIST_COUNT" resultClass="int" parameterClass="VBookQuery">
+		SELECT 
+			count(1)
+		FROM tbl_h5_book_brief
+		WHERE 1=1
+		<include refid="BOOK_BASE_CONDITION"/>
+	</select>
+
+	<select id="SELECT_VIP_BOOK_LIST_PAGE" resultClass="VBook" parameterClass="java.util.HashMap">
+		<include refid="COMMON.PAGING_START" />
+		SELECT 
+			id,
+			book_name AS bookName,
+			img_url AS imgUrl,
+			brief_content AS briefContent,
+			type,
+			author,
+			word_number AS wordNumber,
+			vip_level AS vipLevel,
+			create_time AS createTime
+		FROM tbl_h5_book_brief
+		WHERE 1=1
+		<include refid="BOOK_BASE_CONDITION"/>
+		<include refid="COMMON.PAGING_END" />
+	</select>
+	
+	<select id="SELECT_VIP_BOOK_BY_SEARCH_QUERY" parameterClass="VBookQuery" resultClass="VBook">
+		SELECT 
+			id,
+			book_name AS bookName,
+			img_url AS imgUrl,
+			brief_content AS briefContent,
+			type,
+			author,
+			word_number AS wordNumber,
+			vip_level AS vipLevel,
+			create_time AS createTime
+		FROM tbl_h5_book_brief
+		WHERE 1=1 
+		<isNotEmpty prepend="AND" property="bookName">
+			book_name like CONCAT("%",#bookName#,"%")
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="bookId">
+			id = #bookId#
+		</isNotEmpty>
+		<include refid="BOOK_BASE_CONDITION"/>
+	</select>
+	
+	<select id="SELELCT_BOOK_NEWEST_CHAPTER" parameterClass="VBookQuery" resultClass="VBookChapter">
+		SELECT 
+			chapter_id AS chapterId,
+			book_id AS bookId,
+			title AS chapterTitle,
+			chapter_content AS chapterContent,
+			create_time AS createTime
+		FROM
+			tbl_h5_book_chapter
+		WHERE 1=1
+		AND	book_id = #bookId#
+		ORDER BY chapter_id DESC
+		LIMIT 1
+	</select>
+	
+	<select id="SELECT_BOOK_CATALOG_COUNT" parameterClass="VBookQuery" resultClass="int">
+		SELECT 
+			COUNT(1)
+		FROM 
+			tbl_h5_book_chapter
+		WHERE 1=1
+		<isNotEmpty prepend="AND" property="bookId">
+			book_id = #bookId#
+		</isNotEmpty>
+	</select>
+	
+	<select id = "SELECT_BOOK_CATALOG_PAGE" resultClass="VBookChapter" parameterClass="java.util.HashMap">
+		<include refid="COMMON.PAGING_START" />
+		SELECT 
+			chapter_id AS chapterId,
+			book_id AS bookId,
+			title AS chapterTitle,
+			create_time AS createTime
+		FROM 
+			tbl_h5_book_chapter
+		WHERE 1=1
+		<isNotEmpty prepend="AND" property="bookId">
+			book_id = #bookId#
+		</isNotEmpty>
+		<include refid="COMMON.PAGING_END" />
+	</select>
+	
+	<select id="SELELCT_BOOK_LAST_CHAPTER" parameterClass="VBookQuery" resultClass="VBookChapter">
+		SELECT 
+			chapter_id AS chapterId,
+			book_id AS bookId,
+			title AS chapterTitle
+		FROM
+			tbl_h5_book_chapter
+		WHERE 1=1
+		AND	book_id = #bookId#
+		AND chapter_id &lt; #chapterId#
+		ORDER BY chapter_id DESC
+		LIMIT 1
+	</select>
+	
+	<select id="SELELCT_BOOK_NEXT_CHAPTER" parameterClass="VBookQuery" resultClass="VBookChapter">
+		SELECT 
+			chapter_id AS chapterId,
+			book_id AS bookId,
+			title AS chapterTitle
+		FROM
+			tbl_h5_book_chapter
+		WHERE 1=1
+		AND	book_id = #bookId#
+		AND chapter_id &gt; #chapterId#
+		ORDER BY chapter_id ASC
+		LIMIT 1
+	</select>
+	
+	<select id="SELELCT_BOOK_CHAPTER_ENTITY" parameterClass="VBookQuery" resultClass="VBookChapter">
+		SELECT 
+			chapter_id AS chapterId,
+			book_id AS bookId,
+			title AS chapterTitle,
+			chapter_content AS chapterContent,
+			create_time AS createTime
+		FROM
+			tbl_h5_book_chapter
+		WHERE 1=1
+		AND	book_id = #bookId#
+		AND chapter_id = #chapterId#
+	</select>
+</sqlMap>

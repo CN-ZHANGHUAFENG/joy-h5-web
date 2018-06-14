@@ -1,0 +1,65 @@
+div .book_caatalog_list {
+	margin-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	border-bottom-color: #999;
+	border-bottom-style: solid;
+	border-bottom-width: 0.01rem;
+	border-bottom-color: #999;
+}
+
+ul li {
+	margin: 0.2rem 0rem 0.2rem 0.4rem;
+	font-size: 0.28rem;
+	color: rgb(102, 102, 102);
+}
+
+ul li a {
+	font-size: 0.28rem;
+	color: rgb(102, 102, 102);
+}
+
+.foot_catalog_sel {
+	margin: 0rem 0.3rem 0.8rem 0.3rem;
+	padding-top: 0.4rem;
+}
+
+.foot_catalog_sel .page_button {
+	float: left;
+	color: #FFFFFF;
+	background-color: #ed755e;
+}
+
+.foot_catalog_sel .cancel {
+	border-color: #999;
+	background-color: #999;
+}
+
+.foot_catalog_sel span {
+	display: inline-block;
+	float: left;
+	width: 3.1rem;
+	margin: 0 0.15rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	float: left;
+	border: 0.01rem solid #999;
+	border-radius: 0.1rem;
+}
+
+.foot_catalog_sel span select {
+	display: inline-block;
+	color: #999;
+	width: 100%;
+	margin-bottom: 0.05rem;
+}
+
+.foot_catalog_sel div {
+	width: 1.16rem;
+	height: 0.4rem;
+	cursor: pointer;
+	line-height: 0.4rem;
+	text-align: center;
+	border-radius: 0.1rem;
+	border: 0.01rem solid #ed755e;
+}

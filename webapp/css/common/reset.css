@@ -1,0 +1,88 @@
+/**************************************样式重置*************************************************/
+@charset "utf-8";
+*{ padding:0; margin:0}
+*html{background-image:url(about:blank);background-attachment:fixed;}
+body,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{font-size=62.5%;margin:0;padding:0;}
+body{margin:0rem; padding:0rem;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53", Arial, Helvetica, sans-serif, "San Fransico"; font-size:0.28rem;max-height:99999px} 
+body,div,ul,li,dl,dt,dd,p,img,form,embed,label{-webkit-text-size-adjust:none;margin:0;padding:0;border:none;font-weight:normal;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+ul,ul li{ list-style:none;} 
+input,select,textarea{outline:none;border:none; background:none;resize:none;}
+select,input{ vertical-align:middle;font-size:.28rem;outline: none;}  
+img{border:none;}
+a{color:#333;text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+em{font-style:normal;}
+i{ font-style:normal}
+h1,h2,h3,h4,h5,h6{color: #666;}
+.cls{clear:both; line-height:0rem!important; height:0rem!important;font-size:0rem!important;} 
+.hidden{ display:none}
+
+/*清浮动*/
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+.fc:after{
+	content: " ";
+	height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;	
+}
+.Arial{ font-family:"Arial", Helvetica, sans-serif;}
+.yahei{ font-family:"\5FAE\8F6F\96C5\9ED1";} 
+
+/**************************************顶部导航条*************************************************/
+@charset "utf-8";
+/*头部导航条样式*/
+.layout_header{width: 100%;height: 0.80rem;background-color:#ed6560;line-height: 0.80rem;}
+.layout_header .layout_header_title{}
+.layout_header_title .back_left{
+    float: left;
+    margin-top: 0.19rem;
+    height: 0.42rem;
+    width: 0.42rem;
+    margin-left: 0.3rem;
+}
+.layout_header_title .back_left img{display:block;float:left;width:100%;height:auto;}
+.layout_header_title .login_cont{
+    font-size: 0.36rem;
+    color: #fff;
+    float: left;
+    display: block;
+    width: 76%;
+    text-align: center;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    position: absolute;
+    left: 12%;
+}
+/*home返回图标*/
+.header_home{   
+    width: 0.42rem;
+    float: right;
+    margin-top: 0.19rem;
+    height: 0.42rem;
+    margin-right: 0.3rem;
+}
+.header_home img{display:block;width:100%;height:auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="baseDAO" abstract="true" class="edu.hziee.common.dbroute.BaseDAO">
+		<property name="dbRouteConfig" ref="dbRouteConfig" />
+		<property name="defaultDB" ref="smsDefaultDB" />
+	</bean>
+
+	<bean id="vipBookDAO" class="com.joyreach.h5.web.dao.impl.VipBookDAOImpl"
+		parent="baseDAO">
+	</bean>
+	
+	<bean id="userDAO" class="com.joyreach.h5.web.dao.impl.UserDAOImpl"
+		parent="baseDAO">
+	</bean>
+</beans>

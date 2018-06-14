@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC
+          "-//SPRING//DTD BEAN//EN"
+          "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="h5DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		abstract="false" singleton="true" lazy-init="default" autowire="default"
+		dependency-check="default" destroy-method="close">
+		<property name="driverClass" value="${h5.jdbc.driver}" />
+		<property name="jdbcUrl" value="${h5.jdbc.url}" />
+		<property name="user" value="${h5.jdbc.username}" />
+		<property name="password" value="${h5.jdbc.password}" />
+		<property name="minPoolSize" value="${h5.jdbc.minPoolSize}" />
+		<property name="maxPoolSize" value="${h5.jdbc.maxPoolSize}" />
+		<property name="maxIdleTime" value="${h5.jdbc.maxIdleTime}" />
+		<property name="initialPoolSize" value="${h5.jdbc.initialPoolSize}" />
+		<property name="numHelperThreads" value="${h5.jdbc.numHelperThreads}" />
+		<property name="idleConnectionTestPeriod" value="${h5.jdbc.idleConnectionTestPeriod}" />
+		<property name="preferredTestQuery" value="${h5.jdbc.preferredTestQuery}" />
+	</bean>
+
+	<bean id="h5SqlMap" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocations">
+			<list>
+				<value>
+					classpath:ibatis/sqlmap-config.xml
+				</value>
+			</list>
+		</property>
+		<property name="dataSource">
+			<ref bean="h5DataSource" />
+		</property>
+	</bean>
+
+	<!-- 数据库路由规则配置 -->
+	<bean id="dbRouteConfig" class="edu.hziee.common.dbroute.config.DBRouteConfig">
+		<property name="sqlMapList">
+			<map>
+				<entry key="h5DB">
+					<ref local="h5SqlMap" />
+				</entry>
+			</map>
+		</property>
+		<property name="defaultNodeNameList">
+			<list>
+				<value>h5DB</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="smsDefaultDB" class="edu.hziee.common.dbroute.config.DBRoute">
+		<constructor-arg value="h5DB" />
+	</bean>
+</beans>

@@ -1,0 +1,67 @@
+body {
+	background-color: #fbf6ec;
+}
+
+.div_postion {
+	position: relative;
+}
+
+.h5_novel_titel {
+	width: 100%;
+	width: 100%;
+	height: 0.80rem;
+	background-color: #fbf6ec;
+	line-height: 0.80rem;
+}
+
+.catalog_titel {
+	background-color: #fbf6ec;
+	text-align: center;
+	font-size: 0.36rem;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+}
+
+.div_upOrdown {
+	background-color: #fff0d1eb;
+	padding: 0rem 5%;
+}
+
+.div_button {
+	width: 30%;
+	text-align: center;
+	float: left;
+	margin: 0.02rem 0.04rem;
+}
+
+.div_button span {
+	width: 100%;
+	font-size: 0.18rem;
+	color: green;
+}
+
+.catalog_content {
+	margin: 0.3rem 0.4rem 0rem;
+	padding-bottom: 1rem;
+}
+
+.catalog_content div {
+	width: 100%;
+	text-align: justify;
+}
+
+.pre_content {
+	overflow: auto;
+	color: rgb(52, 45, 45);
+}
+
+.catalog_content div pre {
+	margin-top:0.32rem;
+	width: 100%;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin-bottom: 0rem;
+	line-height: 1.5em;
+	max-height: 999999px;
+}

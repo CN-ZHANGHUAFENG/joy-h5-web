@@ -1,0 +1,17 @@
+.nd_title {
+	position: relative;
+	margin: 0.4rem 0.30rem 0.44rem 0.3rem;
+}
+
+.nd_title_imgbox {
+	width: 1.60rem;
+	height: 2.270rem;
+	box-shadow: 0.04rem 0.08rem 0.1rem 0 rgba(0, 0, 0, .1);
+	overflow: hidden;
+}
+
+.nd_list {
+	border-top: 0.03rem solid #c5c2c2;
+	border-bottom: 0.03rem solid #c5c2c2;
+	background-color: #eae6e5;
+}

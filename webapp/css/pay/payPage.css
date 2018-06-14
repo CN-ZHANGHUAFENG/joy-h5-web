@@ -1,0 +1,108 @@
+.container {
+	padding: 1rem 4%;
+}
+
+.vip_ul_style {
+	display: inline-block;
+	width: 100%;
+}
+
+.vip_ul_style ul {
+	display:inline-block;
+	line-height: 0.6rem;
+	width: 100%;
+	padding-left: 12%;
+}
+
+li {
+	vertical-align:middle;	
+	cursor: pointer;
+	border: 0.04rem solid #fdff95;
+	background-color: #f78f8f;
+	float: left;
+	text-align: center;
+	height: 0.6rem;
+	font-size: 0.28rem;
+	color: white;
+	overflow: hidden;
+	border-radius: 0.4rem;
+	width: 20%;
+	margin: 0 2%;
+	overflow: hidden;
+}
+
+
+.selected_li{
+	background-color:#ff0909; 
+}
+
+li div {
+	font-weight: bold;
+}
+
+.pay_pass {
+	margin: 0.4rem 0;
+	padding: 0 16% 0 12%;
+}
+
+.pay_pass_inpit {
+	border-bottom: 0.03rem solid #ededed;
+	width: 100%;
+	height: 0.76rem;
+	margin-bottom: 0.22rem;
+	line-height: 0.63rem;
+	display: block;
+}
+
+.pay_pass input {
+	width: 85%;
+	height: 0.62rem;
+	font-size: 0.28rem;
+	color: #333;
+	float: left;
+	margin-top: 0.07rem;
+	max-width: 10rem;
+}
+
+.verify_code {
+	border-radius: 0.1rem;
+	text-align: center;
+	display: block;
+	vertical-align: bottom;
+	float: right;
+	background-color: #ffff79;
+	font-size: 0.2rem;
+	padding: 0 0.14rem;
+	cursor: pointer;
+}
+
+.invaild_click{
+	background-color: #cacac4;
+	cursor: default;
+}
+
+.vip_order_message{
+	color: red;
+	font-size: 0.36rem;
+	padding-left: 12%;
+}
+
+.button_div {
+	margin: 0.4rem 1rem;
+}
+
+.order_button {
+	width: 45%;
+	height: 0.7rem;
+	cursor: pointer;
+	background-color: #ed6560;
+	line-height: 0.7rem;
+	text-align: center;
+	border-radius: 0.1rem;
+	color: white;
+	border: 0.02rem solid #ed755e;
+}
+
+.vip_description {
+	padding: 0 12%;
+}
