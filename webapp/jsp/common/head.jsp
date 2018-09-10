@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
+<%@ taglib uri="/c" prefix="c"%>
+<%@ taglib uri="/fn" prefix="fn"%>
 
-
+<c:set var="urlContextPath">${pageContext.request.requestURL}</c:set>
+<base
+	href="${fn:substring(urlContextPath, 0, fn:length(urlContextPath) - fn:length(pageContext.request.requestURI))}${pageContext.request.contextPath}/" />
 <link rel="stylesheet" href="/css/common/common.css${readVerNum}" />
 <link rel="stylesheet" href="/css/common/reset.css${readVerNum}" />
 <link rel="stylesheet" href="/css/common/title.css${readVerNum}" />
@@ -39,7 +43,8 @@
 
 	//校验是否登入,舍去
 	function checkIsLogin(needInfo) {
-		if(true) return true;
+		if (true)
+			return true;
 		usrFlag = localStorage.usrFlag;
 		isLogin = false;
 		$.ajax({
@@ -75,7 +80,8 @@
 
 	//校验是否有权限观看,舍去
 	function checkVipLevel(bookId) {
-		if(true) return true;
+		if (true)
+			return true;
 		usrFlag = localStorage.usrFlag;
 		conformToVip = false;
 		$.ajax({
@@ -105,7 +111,7 @@
 
 		return conformToVip;
 	}
-	
+
 	//验证码请求
 	function toGetVerifyCode() {
 		var phone = $('#phoneId').val();

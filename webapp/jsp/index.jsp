@@ -72,7 +72,7 @@
 </html>
 <script type="text/javascript">
 	var tabList;
-	var IndexBookPerPageItem=10;
+	var IndexBookPerPageItem = 10;
 	$(function() {
 		init();
 	});
@@ -166,7 +166,7 @@
 			url : '/index/ajax/bookInfo.do',
 			data : {
 				'bookName' : bookName,
-				'vipLevel':$('#tabIdHide').val()
+				'vipLevel' : $('#tabIdHide').val()
 			},
 			async : false,
 			success : function(obj) {
