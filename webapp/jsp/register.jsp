@@ -147,24 +147,5 @@
 		}
 	}
 
-	function toGetVerifyCode() {
-		var phone = $('#phoneId').val();
-		var reg = /^1[0-9]{10}$/;
-		if (!phone || '' === phone || !reg.test(phone)) {
-			return false;
-		}
-
-		$.ajax({
-			url : '/login/ajax/getVerifyCode.do',
-			type : 'get',
-			data : {
-				phone : phone
-			},
-			error : function(e) {
-				console.log(e);
-			}
-		})
-
-		return true;
-	}
+	
 </script>

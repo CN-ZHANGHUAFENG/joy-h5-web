@@ -14,7 +14,7 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="/css/classify.css" />
 <link rel="stylesheet" href="/css/index.css" type="text/css">
-<title>17K</title>
+<title>H-Book</title>
 </head>
 <body>
 	<input type="hidden" id="codeHide" value="${code}">
@@ -83,7 +83,7 @@
 		appendContent();
 	}
 	function initVipLabel() {
-		$('.my_title').html("17K");
+		$('.my_title').html("H-Book");
 		tabList = new Array({
 			'id' : 1,
 			'name' : '初级会员'

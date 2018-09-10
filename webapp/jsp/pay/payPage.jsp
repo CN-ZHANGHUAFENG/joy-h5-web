@@ -184,33 +184,4 @@
 			waitTime = 60;
 		}
 	}
-
-	function toGetVerifyCode() {
-		var phone = $('#phoneId').val();
-		var reg = /^1[0-9]{10}$/;
-		if (!phone || '' === phone || !reg.test(phone)) {
-			return false;
-		}
-
-		$.ajax({
-			url : '/pay/reqVerifyCode.do',
-			type : 'post',
-			data : {
-				phone : phone,
-				type : $('#order_VIP_id').val()
-			},
-			success : function(data) {
-				ob = eval('(' + data + ')');
-				if (ob.result_code == 1) {
-					linkId = ob.linkId;
-					chooseType = ob.type;
-				}
-			},
-			error : function(e) {
-				console.log(e);
-			}
-		})
-
-		return true;
-	}
 </script>

@@ -23,8 +23,8 @@ import com.joyreach.h5.web.service.util.PasswordEncryptUtil;
 @Controller
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class LoginAction extends BaseAction {
-
-  @Resource(name = "h5VerifyCodeRedisTemplate")
+//  验证码缓存redis,暂时不用
+//  @Resource(name = "h5VerifyCodeRedisTemplate")
   private RedisTemplate<String, String> h5VerifyCodeRedisTemplate;
 
   @Resource(name = "userService")

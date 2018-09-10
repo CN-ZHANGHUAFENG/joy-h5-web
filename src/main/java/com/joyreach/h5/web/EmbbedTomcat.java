@@ -48,7 +48,7 @@ public class EmbbedTomcat {
 
   private String              imagePath      = "image";
 
-  private String              imageLocalPath = "";
+  private String              imageLocalPath = "/";
 
   public String getImageLocalPath() {
     return imageLocalPath;

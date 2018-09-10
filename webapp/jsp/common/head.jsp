@@ -37,7 +37,9 @@
 		return true;
 	}
 
+	//校验是否登入,舍去
 	function checkIsLogin(needInfo) {
+		if(true) return true;
 		usrFlag = localStorage.usrFlag;
 		isLogin = false;
 		$.ajax({
@@ -58,7 +60,7 @@
 									location.href = "/loginHome.do";
 								});
 						isLogin = false;
-					}else{
+					} else {
 						location.href = "/loginHome.do";
 					}
 				}
@@ -71,7 +73,9 @@
 		return isLogin;
 	}
 
+	//校验是否有权限观看,舍去
 	function checkVipLevel(bookId) {
+		if(true) return true;
 		usrFlag = localStorage.usrFlag;
 		conformToVip = false;
 		$.ajax({
@@ -88,7 +92,8 @@
 					conformToVip = true;
 				} else {
 					$.message.alert('info', '提示', ob.msg, function() {
-						location.href = '/pay/payPage.do?checkKey='+usrFlag+'&bookId='+bookId;
+						location.href = '/pay/payPage.do?checkKey=' + usrFlag
+								+ '&bookId=' + bookId;
 					});
 					conformToVip = false;
 				}
@@ -99,5 +104,27 @@
 		});
 
 		return conformToVip;
+	}
+	
+	//验证码请求
+	function toGetVerifyCode() {
+		var phone = $('#phoneId').val();
+		var reg = /^1[0-9]{10}$/;
+		if (!phone || '' === phone || !reg.test(phone)) {
+			return false;
+		}
+
+		$.ajax({
+			url : '/login/ajax/getVerifyCode.do',
+			type : 'get',
+			data : {
+				phone : phone
+			},
+			error : function(e) {
+				console.log(e);
+			}
+		})
+
+		return true;
 	}
 </script>
