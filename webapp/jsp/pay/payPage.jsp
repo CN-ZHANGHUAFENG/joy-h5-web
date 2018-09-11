@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/common/head.jsp"%>
-<%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
 <!DOCTYPE html>
 <html style="font-size: 50px;">
 <head>
@@ -14,9 +13,9 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" type="text/css" />
-<link rel="stylesheet" href="/css/pay/payPage.css" type="text/css" />
-<link rel="stylesheet" href="/css/login.css" type="text/css" />
+<link rel="stylesheet" href="css/classify.css" type="text/css" />
+<link rel="stylesheet" href="css/pay/payPage.css" type="text/css" />
+<link rel="stylesheet" href="css/login.css" type="text/css" />
 <head>
 
 </head>
@@ -25,19 +24,19 @@
 		<div class="layout_header">
 			<div class="layout_header_title">
 				<div class="back_left" onclick="goBack()">
-					<img src="/images/more.png" />
+					<img src="images/more.png" />
 				</div>
 				<span class="login_cont">开通会员</span>
 			</div>
 			<div class="header_home" onclick="toIndexJsp()">
-				<img src="/images/zhuye.png" />
+				<img src="images/zhuye.png" />
 			</div>
 		</div>
 	</div>
 	<!-- 
 	<div class="refresh">
 		<div class="refresh_img">
-			<img class="needRotate" src="/resources/img/refresh.png" alt="" />
+			<img class="needRotate" src="resources/img/refresh.png" alt="" />
 		</div>
 		<div class="refresh_jump">页面正在跳转中</div>
 	</div>
@@ -73,7 +72,7 @@
 				</div>
 				<!-- 
 					<div class="x_or_d" onclick="changeShow();">
-						<img src="/resources/img/yanjing-b.png" class="changeImg" />
+						<img src="resources/img/yanjing-b.png" class="changeImg" />
 					</div>
 					 -->
 			</div>
@@ -115,7 +114,7 @@
 			return;
 		}
 		$.ajax({
-			url : "/pay/submitVerifyCode.do",
+			url : "pay/submitVerifyCode.do",
 			type : "post",
 			data : {
 				linkId : linkId,
@@ -127,7 +126,7 @@
 				ob = eval('(' + data + ')');
 				if (ob.result_code == '0') {
 					$.message.alert('info','提示','订购成功',function(){
-						location.href = "/index.do";
+						location.href = "index.do";
 					})
 				} else {
 					$.message.alert("info", "提示", "订购失败！");

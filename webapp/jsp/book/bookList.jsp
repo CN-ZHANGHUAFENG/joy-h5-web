@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/common/head.jsp"%>
-<%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
 <html style="font-size: 50px;">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -13,18 +12,18 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/book/bookList.css" type="text/css">
+<link rel="stylesheet" href="css/book/bookList.css" type="text/css">
 </head>
 <body>
 	<c:forEach items="${bookEntities}" var="be" varStatus="vs">
 		<div class="my_r_box fc bookStyle-rank">
-			<a href="/book/detail.do?bookId=${be.id}">
+			<a href="book/detail.do?bookId=${be.id}">
 				<div class="mrb_img fl" style="position: relative">
 					<img src="${be.imgUrl}">
 					<div class="rank_num">
 						<img
 							style="background-color: transparent; width: 72%; position: relative; left: 0.1rem; top: -0.27rem;"
-							src="/images/rank1@2x.png" /> <span
+							src="images/rank1@2x.png" /> <span
 							style="position: absolute; top: -0.21rem; left: 0.21rem; color: white; font-size: 0.26rem;"
 							class="rankLabel1span">${vs.count+(currentPage-1)*10}</span>
 					</div>

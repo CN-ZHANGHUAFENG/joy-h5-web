@@ -12,8 +12,8 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" />
-<link rel="stylesheet" href="/css/index.css" type="text/css">
+<link rel="stylesheet" href="css/classify.css" />
+<link rel="stylesheet" href="css/index.css" type="text/css">
 <title>H-Book</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="mh_right fr">
 				<div class="my_person fr" onclick="checkIsLogin('notNeed');">
-					<img src="/images/person@2x.png" />
+					<img src="images/person@2x.png" />
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 		<div class="nav_search">
 			<input type="text" placeholder="搜索" id="footSearchInput" />
 			<div class="ns_img" onclick="serachBook();">
-				<img src="/images/search.png" />
+				<img src="images/search.png" />
 			</div>
 		</div>
 	</div>
@@ -52,13 +52,13 @@
 		<div class="my_record">
 			<div class="my_record_recent">
 				<div class="mr_img_left">
-					<img src="/images/record@2x.png" />
+					<img src="images/record@2x.png" />
 				</div>
 				<div class="my_r_name"></div>
 			</div>
 			<div class="my_record_shift">
 				<div class="shu_line"></div>
-				<img class="mr_img_right" src="/images/bookshelft.png" /> <span
+				<img class="mr_img_right" src="images/bookshelft.png" /> <span
 					id="toMyCollect" class="my_r_text">书架</span>
 			</div>
 		</div>
@@ -111,7 +111,7 @@
 	}
 
 	function toListHome(tabId) {
-		window.location.href = '/index/' + tabId + ".do";
+		window.location.href = 'index/' + tabId + ".do";
 	}
 
 	function wrapTab() {
@@ -135,7 +135,7 @@
 		tabId = $('#tabIdHide').val();
 		$.ajax({
 			type : 'get',
-			url : '/index/ajax/books.do',
+			url : 'index/ajax/books.do',
 			data : {
 				vipLevel : tabId,
 				currentPage : currentPage,
@@ -163,7 +163,7 @@
 		}
 		$.ajax({
 			type : 'get',
-			url : '/index/ajax/bookInfo.do',
+			url : 'index/ajax/bookInfo.do',
 			data : {
 				'bookName' : bookName,
 				'vipLevel' : $('#tabIdHide').val()

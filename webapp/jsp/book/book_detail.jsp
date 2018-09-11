@@ -13,9 +13,9 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" type="text/css" />
-<link rel="stylesheet" href="/css/book/book_detail.css" type="text/css">
-<link rel="stylesheet" href="/css/common/novel_detail.css"
+<link rel="stylesheet" href="css/classify.css" type="text/css" />
+<link rel="stylesheet" href="css/book/book_detail.css" type="text/css">
+<link rel="stylesheet" href="css/common/novel_detail.css"
 	type="text/css">
 </head>
 <body>
@@ -24,12 +24,12 @@
 		<div class="layout_header">
 			<div class="layout_header_title">
 				<div class="back_left" onclick="goBack()">
-					<img src="/images/more.png" />
+					<img src="images/more.png" />
 				</div>
 				<span class="login_cont">书籍详情</span>
 			</div>
 			<div class="header_home" onclick="toIndexJsp()">
-				<img src="/images/zhuye.png" />
+				<img src="images/zhuye.png" />
 			</div>
 		</div>
 	</div>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="fr new_chapter">
 				<span>最新章节</span> <span>${newestChapter.chapterTitle}</span> <em
-					class="ndl_img"> <img src="/images/more@2x.png" />
+					class="ndl_img"> <img src="images/more@2x.png" />
 				</em>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 	flag = null;
 	function bindClick() {
 		$('.read_more').append(
-				"展开<span><img src='/images/open@2x.png' /></span>");
+				"展开<span><img src='images/open@2x.png' /></span>");
 		flag = 1;
 		$('.read_more')
 				.click(
@@ -118,14 +118,14 @@
 								$('.read_more').empty();
 								$('.read_more')
 										.append(
-												"收起<span><img src='/images/retract@2x.png' /></span>");
+												"收起<span><img src='images/retract@2x.png' /></span>");
 								flag = 2;
 							} else if (flag == 2) {
 								$('.introduce').height('1.2rem');
 								$('.read_more').empty();
 								$('.read_more')
 										.append(
-												"展开<span><img src='/images/open@2x.png' /></span>");
+												"展开<span><img src='images/open@2x.png' /></span>");
 								flag = 1;
 							}
 						});
@@ -134,7 +134,7 @@
 	function loadCatalog() {
 		$.ajax({
 			type : "get",
-			url : "/book/catalog.do",
+			url : "book/catalog.do",
 			data : {
 				bookId : bookId
 			},
@@ -150,7 +150,7 @@
 	function getCatalogPage(currentPage) {
 		$.ajax({
 			type : "get",
-			url : "/book/catalog.do",
+			url : "book/catalog.do",
 			data : {
 				bookId : bookId,
 				currentPage : currentPage,
@@ -171,6 +171,6 @@
 		if(!checkVipLevel(bookId)){
 			return;
 		}
-		location.href="/book/catalog/read.do?chapterId="+catalogId+"&bookId="+bookId;
+		location.href="book/catalog/read.do?chapterId="+catalogId+"&bookId="+bookId;
 	}
 </script>

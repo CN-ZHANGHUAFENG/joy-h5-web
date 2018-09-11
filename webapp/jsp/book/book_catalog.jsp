@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/common/head.jsp"%>
-<%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
 <html style="font-size: 50px;">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -13,7 +12,7 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/book/book_catalog.css" type="text/css">
+<link rel="stylesheet" href="css/book/book_catalog.css" type="text/css">
 </head>
 <body>
 	<input type="hidden" value="${totalCount}" id="totalCount_input" />

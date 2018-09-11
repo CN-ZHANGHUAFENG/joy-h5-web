@@ -13,8 +13,8 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" type="text/css" />
-<link rel="stylesheet" href="/css/register.css" type="text/css" />
+<link rel="stylesheet" href="css/classify.css" type="text/css" />
+<link rel="stylesheet" href="css/register.css" type="text/css" />
 <head>
 
 </head>
@@ -23,12 +23,12 @@
 		<div class="layout_header">
 			<div class="layout_header_title">
 				<div class="back_left" onclick="goBack()">
-					<img src="/images/more.png" />
+					<img src="images/more.png" />
 				</div>
 				<span class="login_cont">注册</span>
 			</div>
 			<div class="header_home" onclick="toIndexJsp()">
-				<img src="/images/zhuye.png" />
+				<img src="images/zhuye.png" />
 			</div>
 		</div>
 	</div>
@@ -52,7 +52,7 @@
 	<div class="message_div">
 		<div style='overflow: hidden; display: none;' class="getMessage_show">
 			<div class="sj_notinput">
-				<img src="/resources/img/tishi.png" />
+				<img src="resources/img/tishi.png" />
 			</div>
 			<span id="warningText">asdsa</span>
 		</div>
@@ -94,7 +94,7 @@
 		}
 
 		$.ajax({
-			url : "/login/register.do",
+			url : "login/register.do",
 			type : "post",
 			data : {
 				phone : phone,
@@ -104,7 +104,7 @@
 				ob = eval('(' + data + ')');
 				if (ob.result == 'success') {
 					localStorage.usrFlag = phone + '_' + ob.token;
-					location.href = "/index.do";
+					location.href = "index.do";
 				} else {
 					$.message.alert("info", "提示", "手机号未注册或密码错误！");
 					$('#pwdOnce').val();

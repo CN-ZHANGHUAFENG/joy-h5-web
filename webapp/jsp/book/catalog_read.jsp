@@ -13,21 +13,21 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" type="text/css" />
-<link rel="stylesheet" href="/css/book/catalog_read.css" type="text/css">
-<link rel="stylesheet" href="/css/common/novel_detail.css"
+<link rel="stylesheet" href="css/classify.css" type="text/css" />
+<link rel="stylesheet" href="css/book/catalog_read.css" type="text/css">
+<link rel="stylesheet" href="css/common/novel_detail.css"
 	type="text/css">
 </head>
 <body>
 	<div class="layout_header div_postion">
 		<div class="layout_header_title">
 			<div class="back_left" onclick="goBack()">
-				<img src="/images/more.png">
+				<img src="images/more.png">
 			</div>
 			<span class="login_cont">${bookName}</span>
 		</div>
 		<div class="header_home" onclick="toIndexJsp()">
-			<img src="/images/zhuye.png">
+			<img src="images/zhuye.png">
 		</div>
 	</div>
 	<div id="chapter_title" class="layout_header div_postion catalog_titel"></div>
@@ -85,7 +85,7 @@
 	
 	function loadContent(){
 		$.ajax({
-			url:"/book/catalog/ajax/content.do?chapterId="+${chapterInfo.chapterId}+"&bookId="+bookId,
+			url:"book/catalog/ajax/content.do?chapterId="+${chapterInfo.chapterId}+"&bookId="+bookId,
 			type:"GET",
 			success:function(data){
 				var info = eval('('+data+')');
@@ -100,10 +100,10 @@
 	
 	function toBookDetail(buttonType,index){
 		if(buttonType === 'home'){
-			location.href="/book/detail.do?bookId=${chapterInfo.bookId}";
+			location.href="book/detail.do?bookId=${chapterInfo.bookId}";
 		}else{
 			if(index){
-				location.href="/book/catalog/read.do?chapterId="+index+"&bookId=${chapterInfo.bookId}";
+				location.href="book/catalog/read.do?chapterId="+index+"&bookId=${chapterInfo.bookId}";
 			}
 		}
 	}

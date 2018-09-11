@@ -7,19 +7,19 @@
 <c:set var="urlContextPath">${pageContext.request.requestURL}</c:set>
 <base
 	href="${fn:substring(urlContextPath, 0, fn:length(urlContextPath) - fn:length(pageContext.request.requestURI))}${pageContext.request.contextPath}/" />
-<link rel="stylesheet" href="/css/common/common.css${readVerNum}" />
-<link rel="stylesheet" href="/css/common/reset.css${readVerNum}" />
-<link rel="stylesheet" href="/css/common/title.css${readVerNum}" />
-<link rel="stylesheet" href="/css/common/dialog.css${readVerNum}" />
+<link rel="stylesheet" href="css/common/common.css${readVerNum}" />
+<link rel="stylesheet" href="css/common/reset.css${readVerNum}" />
+<link rel="stylesheet" href="css/common/title.css${readVerNum}" />
+<link rel="stylesheet" href="css/common/dialog.css${readVerNum}" />
 
-<script type="text/javascript" src="/js/jquery/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
-<script type="text/javascript" src="/js/common/common.js?v=6"></script>
-<script type="text/javascript" src="/js/common/jr.js?v=2"></script>
+<script type="text/javascript" src="js/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="js/common/common.js?v=6"></script>
+<script type="text/javascript" src="js/common/jr.js?v=2"></script>
 
 <script type="text/javascript">
 	function toIndexJsp() {
-		location.href = "/index.do";
+		location.href = "index.do";
 	}
 
 	function goBack() {
@@ -48,7 +48,7 @@
 		usrFlag = localStorage.usrFlag;
 		isLogin = false;
 		$.ajax({
-			url : '/ajax/check.do',
+			url : 'ajax/check.do',
 			type : 'get',
 			data : {
 				checkKey : usrFlag
@@ -62,11 +62,11 @@
 					if (!needInfo) {
 						$.message.alert("info", "提示", "用户未登录，将跳转至登录页",
 								function(data) {
-									location.href = "/loginHome.do";
+									location.href = "loginHome.do";
 								});
 						isLogin = false;
 					} else {
-						location.href = "/loginHome.do";
+						location.href = "loginHome.do";
 					}
 				}
 			},
@@ -85,7 +85,7 @@
 		usrFlag = localStorage.usrFlag;
 		conformToVip = false;
 		$.ajax({
-			url : '/book/ajax/checkVipLevel.do',
+			url : 'book/ajax/checkVipLevel.do',
 			type : 'post',
 			async : false,
 			data : {
@@ -98,7 +98,7 @@
 					conformToVip = true;
 				} else {
 					$.message.alert('info', '提示', ob.msg, function() {
-						location.href = '/pay/payPage.do?checkKey=' + usrFlag
+						location.href = 'pay/payPage.do?checkKey=' + usrFlag
 								+ '&bookId=' + bookId;
 					});
 					conformToVip = false;
@@ -121,7 +121,7 @@
 		}
 
 		$.ajax({
-			url : '/login/ajax/getVerifyCode.do',
+			url : 'login/ajax/getVerifyCode.do',
 			type : 'get',
 			data : {
 				phone : phone

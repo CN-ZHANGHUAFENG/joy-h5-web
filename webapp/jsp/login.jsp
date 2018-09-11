@@ -13,8 +13,8 @@
 <meta content="telephone=no, email=no" name="format-detection">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="stylesheet" href="/css/classify.css" type="text/css" />
-<link rel="stylesheet" href="/css/login.css" type="text/css" />
+<link rel="stylesheet" href="css/classify.css" type="text/css" />
+<link rel="stylesheet" href="css/login.css" type="text/css" />
 <head>
 
 </head>
@@ -23,19 +23,19 @@
 		<div class="layout_header">
 			<div class="layout_header_title">
 				<div class="back_left" onclick="goBack()">
-					<img src="/images/more.png" />
+					<img src="images/more.png" />
 				</div>
 				<span class="login_cont">登录</span>
 			</div>
 			<div class="header_home" onclick="toIndexJsp()">
-				<img src="/images/zhuye.png" />
+				<img src="images/zhuye.png" />
 			</div>
 		</div>
 	</div>
 	<!-- 
 	<div class="refresh">
 		<div class="refresh_img">
-			<img class="needRotate" src="/resources/img/refresh.png" alt="" />
+			<img class="needRotate" src="resources/img/refresh.png" alt="" />
 		</div>
 		<div class="refresh_jump">页面正在跳转中</div>
 	</div>
@@ -46,7 +46,7 @@
 				<!--输入用户名-->
 				<div class="uinfo_input">
 					<div class="uinfo_img">
-						<img src="/images/dengl.png" />
+						<img src="images/dengl.png" />
 					</div>
 					<input type="text" name="phone" id="phoneId" placeholder="手机号"
 						maxlength="20" />
@@ -54,13 +54,13 @@
 				<!--输入密码-->
 				<div class="uinfo_input">
 					<div class="uinfo_img">
-						<img src="/images/suo.png"/>
+						<img src="images/suo.png"/>
 					</div>
 					<input type="text" name="password" id="pwdId" placeholder="密码"
 						maxlength="20" />
 					<!-- 
 					<div class="x_or_d" onclick="changeShow();">
-						<img src="/resources/img/yanjing-b.png" class="changeImg" />
+						<img src="resources/img/yanjing-b.png" class="changeImg" />
 					</div>
 					 -->
 				</div>
@@ -70,7 +70,7 @@
 				<div style='overflow: hidden; display: none;'
 					class="getMessage_show">
 					<div class="sj_notinput">
-						<img src="/resources/img/tishi.png" />
+						<img src="resources/img/tishi.png" />
 					</div>
 					<span> <!-- 手机号未注册 -->
 					</span>
@@ -80,7 +80,7 @@
 			<div class="user_login fix" onclick="login();">登录</div>
 			<div class="register_forget">
 				<p class="register_user">
-					<a href="/login/registerPage.do">立即注册</a>
+					<a href="login/registerPage.do">立即注册</a>
 				</p>
 				<!-- 
 				<p class="forget_pass">
@@ -115,7 +115,7 @@
 			return;
 		}
 		$.ajax({
-			url : "/login.do",
+			url : "login.do",
 			type : "post",
 			data : {
 				phone : phone,
@@ -125,7 +125,7 @@
 				ob = eval('(' + data + ')');
 				if (ob.result == 'success') {
 					localStorage.usrFlag = phone + '_' + ob.token;
-					location.href = "/index.do";
+					location.href = "index.do";
 				} else {
 					$.message.alert("info", "提示", "手机号未注册或密码错误！");
 				}

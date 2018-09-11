@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <%@ taglib uri="/c" prefix="c"%>
-<%@ taglib prefix="fmt" uri="/fmt"%>
 <%@ taglib prefix="fn" uri="/fn"%>
 <c:set var="urlContextPath">${pageContext.request.requestURL}</c:set>
 <html>

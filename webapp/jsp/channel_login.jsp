@@ -16,9 +16,9 @@
 		<script type="text/javascript" src="js/common/jrSlide.js"></script>
 		<script type="text/javascript" src="js/common/common.js"></script>
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="css/chLogin.css" />
-		<link rel="stylesheet" type="text/css" href="css/dialog.css" />
-		<link rel="stylesheet" type="text/css" href="css/loading.css" />
+		<link rel="stylesheet" type="text/css" href="/css/chLogin.css" />
+		<link rel="stylesheet" type="text/css" href="/css/dialog.css" />
+		<link rel="stylesheet" type="text/css" href="/css/loading.css" />
 		<script type="text/javascript">
 			$(document).ready(function(){
 				if(navigator.cookieEnabled == false){
